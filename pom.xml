@@ -783,6 +783,19 @@
 			<plugins>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>2.1.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>3.0.0</version>
+					<configuration>
+						<doclint>none</doclint>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jar-plugin</artifactId>
 					<version>2.3.2</version>
 				</plugin>
@@ -841,9 +854,9 @@
 				<module>modules/activiti-image-generator</module>
 				<module>modules/activiti-bpmn-converter</module>
 				<module>modules/activiti-engine</module>
-                <module>modules/activiti-secure-tasks</module>
-                <module>modules/activiti-secure-javascript</module>
-                <module>modules/activiti-secure-service-tasks</module>
+				<module>modules/activiti-secure-tasks</module>
+				<module>modules/activiti-secure-javascript</module>
+				<module>modules/activiti-secure-service-tasks</module>
 				<module>modules/activiti-bpmn-layout</module>
 				<module>modules/activiti-json-converter</module>
 				<module>modules/activiti-dmn-model</module>
@@ -891,10 +904,8 @@
 						</executions>
 					</plugin>
 					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
-						<configuration>
-							<additionalparam>-Xdoclint:none</additionalparam>
-						</configuration>
 						<executions>
 							<execution>
 								<id>attach-javadocs</id>
@@ -1170,9 +1181,6 @@
 								</goals>
 							</execution>
 						</executions>
-						<configuration>
-							<additionalparam>-Xdoclint:none</additionalparam>
-						</configuration>
 					</plugin>
 				</plugins>
 			</build>
